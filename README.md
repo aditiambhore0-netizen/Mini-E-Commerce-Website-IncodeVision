@@ -1,3 +1,5 @@
+# 🌟  Mini E-Commerce Website – IncodeVision Internship Task
+
 # 🛒 NovaCart - Mini E-Commerce Website
 
 A modern and responsive E-Commerce Website built using HTML, CSS, and JavaScript as part of the IncodeVision Internship Program. The project provides a complete online shopping experience with product browsing, cart management, wishlist functionality, coupon discounts, checkout, order history, invoice generation, and an AI-powered shopping assistant.
