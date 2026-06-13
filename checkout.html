@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#f4f7fc;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.checkout-box{
+background:white;
+padding:30px;
+width:450px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+color:#2563eb;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+opacity:.9;
+}
+</style>
+
+</head>
+<body>
+
+<div class="checkout-box">
+
+<h2>Checkout</h2>
+
+<input type="text" id="name" placeholder="Full Name">
+
+<input type="text" id="address" placeholder="Address">
+
+<input type="text" id="phone" placeholder="Phone Number">
+
+<button onclick="placeOrder()">
+Place Order
+</button>
+
+</div>
+
+<script>
+
+function placeOrder(){
+
+const name =
+document.getElementById("name").value;
+
+const address =
+document.getElementById("address").value;
+
+const phone =
+document.getElementById("phone").value;
+
+if(
+!name ||
+!address ||
+!phone
+){
+alert("Please fill all fields");
+return;
+}
+
+const cart =
+JSON.parse(
+localStorage.getItem("cart")
+) || [];
+
+let orders =
+JSON.parse(
+localStorage.getItem("orders")
+) || [];
+
+orders.push({
+customer:name,
+address:address,
+phone:phone,
+products:cart,
+date:new Date().toLocaleString()
+});
+
+localStorage.setItem(
+"orders",
+JSON.stringify(orders)
+);
+
+localStorage.removeItem("cart");
+
+alert("Order Placed Successfully 🎉");
+
+window.location.href =
+"orders.html";
+}
+
+</script>
+
+</body>
+</html>

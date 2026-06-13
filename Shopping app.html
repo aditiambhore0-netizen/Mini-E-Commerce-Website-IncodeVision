@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditi Store - Modern E-Commerce</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+
+<div class="logo">
+    <h2>Aditi Store</h2>
+</div>
+
+<div class="nav-links">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search Products...">
+
+<select id="categoryFilter">
+<option value="all">All Categories</option>
+<option value="electronics">Electronics</option>
+<option value="accessories">Accessories</option>
+<option value="gaming">Gaming</option>
+</select>
+
+<button id="darkModeBtn">
+<i class="fas fa-moon"></i>
+</button>
+
+<div class="wishlist-icon">
+❤️ <span id="wishlistCount">0</span>
+</div>
+
+<div class="cart-icon">
+🛒 <span id="cartCount">0</span>
+</div>
+
+</div>
+
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Shop Smart, Live Better</h1>
+
+<p>
+Discover premium products with amazing offers.
+</p>
+
+<a href="#products">
+<button class="hero-btn">
+Shop Now
+</button>
+</a>
+
+</div>
+
+</section>
+
+<!-- Stats -->
+<section class="stats">
+
+<div class="stat-card">
+<h3 id="totalProducts">6</h3>
+<p>Products</p>
+</div>
+
+<div class="stat-card">
+<h3 id="cartStat">0</h3>
+<p>Cart Items</p>
+</div>
+
+<div class="stat-card">
+<h3 id="wishlistStat">0</h3>
+<p>Wishlist</p>
+</div>
+
+</section>
+
+<!-- Products -->
+<section id="products">
+
+<h2 class="section-title">
+Featured Products
+</h2>
+
+<div class="product-container">
+
+<!-- Product 1 -->
+<div
+class="product"
+data-category="electronics">
+
+<img src="Wireless Headphones.webp">
+
+<h3>Wireless Headphones</h3>
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+<p class="price">
+₹999
+</p>
+
+<div class="btn-group">
+
+<button
+onclick="addToCart(
+'Wireless Headphones',
+999
+)">
+Add To Cart
+</button>
+
+<button
+class="wishlist-btn"
+onclick="addToWishlist(
+'Wireless Headphones'
+)">
+❤️
+</button>
+
+</div>
+
+</div>
+
+<!-- Product 2 -->
+<div
+class="product"
+data-category="electronics">
+
+<img src="Smart Watch.jpeg">
+
+<h3>Smart Watch</h3>
+
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+
+<p class="price">
+₹1499
+</p>
+
+<div class="btn-group">
+
+<button
+onclick="addToCart(
+'Smart Watch',
+1499
+)">
+Add To Cart
+</button>
+
+<button
+class="wishlist-btn"
+onclick="addToWishlist(
+'Smart Watch'
+)">
+❤️
+</button>
+
+</div>
+
+</div>
+
+<!-- Product 3 -->
+<div
+class="product"
+data-category="gaming">
+
+<img src="gaming mouse.webp">
+
+<h3>Gaming Mouse</h3>
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+<p class="price">
+₹799
+</p>
+
+<div class="btn-group">
+
+<button
+onclick="addToCart(
+'Gaming Mouse',
+799
+)">
+Add To Cart
+</button>
+
+<button
+class="wishlist-btn"
+onclick="addToWishlist(
+'Gaming Mouse'
+)">
+❤️
+</button>
+
+</div>
+
+</div>
+
+<!-- Product 4 -->
+<div
+class="product"
+data-category="accessories">
+
+<img src="Bluetooth Speaker.jpeg">
+
+<h3>Bluetooth Speaker</h3>
+
+<div class="rating">
+⭐⭐⭐⭐☆
+</div>
+
+<p class="price">
+₹899
+</p>
+
+<div class="btn-group">
+
+<button
+onclick="addToCart(
+'Bluetooth Speaker',
+899
+)">
+Add To Cart
+</button>
+
+<button
+class="wishlist-btn"
+onclick="addToWishlist(
+'Bluetooth Speaker'
+)">
+❤️
+</button>
+
+</div>
+
+</div>
+
+<!-- Product 5 -->
+<div
+class="product"
+data-category="accessories">
+
+<img src="Power Bank.jpg">
+
+<h3>Power Bank</h3>
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+<p class="price">
+₹699
+</p>
+
+<div class="btn-group">
+
+<button
+onclick="addToCart(
+'Power Bank',
+699
+)">
+Add To Cart
+</button>
+
+<button
+class="wishlist-btn"
+onclick="addToWishlist(
+'Power Bank'
+)">
+❤️
+</button>
+
+</div>
+
+</div>
+
+<!-- Product 6 -->
+<div
+class="product"
+data-category="gaming">
+
+<img src="Mechanical Keyboard.avif">
+
+<h3>Mechanical Keyboard</h3>
+
+<div class="rating">
+⭐⭐⭐⭐⭐
+</div>
+
+<p class="price">
+₹1999
+</p>
+
+<div class="btn-group">
+
+<button
+onclick="addToCart(
+'Mechanical Keyboard',
+1999
+)">
+Add To Cart
+</button>
+
+<button
+class="wishlist-btn"
+onclick="addToWishlist(
+'Mechanical Keyboard'
+)">
+❤️
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Cart -->
+<section class="cart-section">
+
+<h2>Shopping Cart</h2>
+
+<ul id="cartItems"></ul>
+
+<div class="coupon-box">
+
+<input
+type="text"
+id="couponCode"
+placeholder="Enter Coupon">
+
+<button onclick="applyCoupon()">
+Apply Coupon
+</button>
+
+</div>
+
+<h3>
+Total:
+₹<span id="cartTotal">0</span>
+</h3>
+
+<a href="checkout.html">
+<button class="checkout-btn">
+Proceed To Checkout
+</button>
+</a>
+
+</section>
+
+<!-- AI Assistant -->
+<!-- Chat Button -->
+<div class="chat-toggle" onclick="toggleChat()">
+    💬
+</div>
+
+<!-- Chatbot -->
+<div class="chatbot" id="chatbot">
+
+    <div class="chat-header">
+        <h3>🤖 AI Assistant</h3>
+        <span onclick="toggleChat()">✖</span>
+    </div>
+
+    <div id="chatMessages"></div>
+
+    <input
+    type="text"
+    id="userQuestion"
+    placeholder="Ask me anything">
+
+    <button onclick="askBot()">
+        Send
+    </button>
+
+</div>
+
+<!-- Toast Notification -->
+<div id="toast">
+Item Added Successfully
+</div>
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#fff7ed,#fef3c7,#fce7f3);
+    color:#222;
+    transition:0.4s;
+}
+
+/* Dark Mode */
+body.dark{
+    background:#0f172a;
+    color:white;
+}
+
+/* Navbar */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    background:white;
+    box-shadow:0 4px 20px rgba(255,107,107,.15);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+body.dark .navbar{
+    background:#1e293b;
+}
+
+.logo h2{
+    background:linear-gradient(
+        45deg,
+        #ff416c,
+        #ff4b2b,
+        #ffcc00
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.nav-links input,
+.nav-links select{
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+    background:#f3e8ff;
+}
+
+#darkModeBtn{
+    border:none;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(
+        45deg,
+        #ff416c,
+        #ff4b2b
+    );
+}
+
+.cart-icon{
+    color:#ff416c;
+    font-weight:600;
+}
+
+.wishlist-icon{
+    color:#ff1744;
+    font-weight:600;
+}
+
+/* Hero Section */
+.hero{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #ff416c,
+        #ff4b2b,
+        #ffcc00,
+        #00c9ff,
+        #7b2ff7
+    );
+
+    background-size:300% 300%;
+    animation:gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.hero-btn{
+    background:white;
+    color:#ff416c;
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:600;
+}
+
+.hero-btn:hover{
+    transform:scale(1.08);
+}
+
+/* Stats */
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:50px 20px;
+    flex-wrap:wrap;
+}
+
+.stat-card{
+    background:white;
+    width:220px;
+    text-align:center;
+    padding:25px;
+    border-radius:20px;
+    border-left:6px solid #ff416c;
+    box-shadow:0 10px 25px rgba(255,65,108,.2);
+}
+
+body.dark .stat-card{
+    background:#1e293b;
+}
+
+.stat-card h3{
+    color:#ff416c;
+    font-size:30px;
+}
+
+/* Title */
+.section-title{
+    text-align:center;
+    margin:40px 0;
+    font-size:35px;
+    color:#ff416c;
+}
+
+/* Products */
+.product-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    padding:20px 8%;
+}
+
+.product{
+    background:linear-gradient(
+        145deg,
+        #ffffff,
+        #fff1f2
+    );
+
+    border-radius:20px;
+    overflow:hidden;
+    border:2px solid #ffd6dd;
+
+    box-shadow:0 8px 20px rgba(255,65,108,.15);
+    transition:.4s;
+}
+
+body.dark .product{
+    background:#1e293b;
+    border:none;
+}
+
+.product:hover{
+    transform:translateY(-12px);
+    box-shadow:0 15px 35px rgba(255,65,108,.35);
+}
+
+.product img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.product h3{
+    padding:15px;
+}
+
+.rating{
+    padding:0 15px;
+}
+
+.price{
+    padding:10px 15px;
+    color:#ff416c;
+    font-size:22px;
+    font-weight:600;
+}
+
+.btn-group{
+    display:flex;
+    justify-content:space-between;
+    padding:15px;
+}
+
+.btn-group button{
+    border:none;
+    padding:12px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-group button:first-child{
+    background:linear-gradient(
+        45deg,
+        #ff416c,
+        #ff4b2b
+    );
+    color:white;
+    flex:1;
+}
+
+.wishlist-btn{
+    margin-left:10px;
+    background:linear-gradient(
+        45deg,
+        #ff1744,
+        #ff4081
+    );
+    color:white;
+    width:55px;
+}
+
+.btn-group button:hover{
+    transform:scale(1.05);
+}
+
+/* Cart */
+.cart-section{
+    width:90%;
+    max-width:900px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(255,65,108,.15);
+}
+
+body.dark .cart-section{
+    background:#1e293b;
+}
+
+.cart-section h2{
+    margin-bottom:20px;
+    color:#ff416c;
+}
+
+#cartItems{
+    list-style:none;
+    margin-bottom:20px;
+}
+
+#cartItems li{
+    display:flex;
+    justify-content:space-between;
+    margin:12px 0;
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+.coupon-box{
+    display:flex;
+    gap:10px;
+    margin:20px 0;
+}
+
+.coupon-box input{
+    flex:1;
+    padding:10px;
+}
+
+.coupon-box button{
+    background:linear-gradient(
+        45deg,
+        #00c853,
+        #64dd17
+    );
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.checkout-btn{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    color:white;
+    cursor:pointer;
+
+    background:linear-gradient(
+        45deg,
+        #ff416c,
+        #ff4b2b
+    );
+}
+
+/* Chat Icon */
+
+.chat-toggle{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(
+        45deg,
+        #ff416c,
+        #ff4b2b
+    );
+    color:white;
+    font-size:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(255,65,108,.3);
+    z-index:1000;
+}
+
+/* Chat Window */
+
+.chatbot{
+    position:fixed;
+    bottom:90px;
+    right:20px;
+    width:350px;
+    background:white;
+    border-radius:20px;
+    padding:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    display:none;
+    z-index:1000;
+}
+
+body.dark .chatbot{
+    background:#1e293b;
+}
+
+.chat-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.chat-header span{
+    cursor:pointer;
+    font-size:20px;
+}
+
+#chatMessages{
+    height:200px;
+    overflow-y:auto;
+    border:1px solid #ddd;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+.chatbot input{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+.chatbot button{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    color:white;
+    cursor:pointer;
+
+    background:linear-gradient(
+        45deg,
+        #7b2ff7,
+        #00c9ff
+    );
+}
+
+/* Toast */
+#toast{
+    position:fixed;
+    top:30px;
+    right:30px;
+    background:linear-gradient(
+        45deg,
+        #00c853,
+        #64dd17
+    );
+    color:white;
+    padding:15px 25px;
+    border-radius:10px;
+    opacity:0;
+    pointer-events:none;
+    transition:.4s;
+}
+
+#toast.show{
+    opacity:1;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+.navbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero-content h1{
+    font-size:40px;
+}
+
+.hero-content p{
+    font-size:16px;
+}
+
+.chatbot{
+    width:90%;
+    right:5%;
+}
+}
+</style>
+
+<script>
+    src="script.js"
+    // ==========================
+// Local Storage Setup
+// ==========================
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+let total = 0;
+
+// ==========================
+// Load Data On Startup
+// ==========================
+
+window.onload = function () {
+    renderCart();
+    updateWishlistCount();
+    loadTheme();
+};
+
+// ==========================
+// Add To Cart
+// ==========================
+
+function addToCart(name, price) {
+
+    cart.push({
+        name,
+        price
+    });
+
+    saveCart();
+    renderCart();
+
+    showToast(`${name} added to cart`);
+}
+
+// ==========================
+// Save Cart
+// ==========================
+
+function saveCart() {
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+}
+
+// ==========================
+// Render Cart
+// ==========================
+
+function renderCart() {
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+    const cartStat =
+        document.getElementById("cartStat");
+
+    const cartTotal =
+        document.getElementById("cartTotal");
+
+    cartItems.innerHTML = "";
+
+    total = 0;
+
+    cart.forEach((item, index) => {
+
+        total += item.price;
+
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+            ${item.name} - ₹${item.price}
+            <button onclick="removeItem(${index})">
+                ❌
+            </button>
+        `;
+
+        cartItems.appendChild(li);
+    });
+
+    cartCount.textContent = cart.length;
+    cartStat.textContent = cart.length;
+    cartTotal.textContent = total;
+}
+
+// ==========================
+// Remove Item
+// ==========================
+
+function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    saveCart();
+    renderCart();
+
+    showToast("Item removed");
+}
+
+// ==========================
+// Wishlist
+// ==========================
+
+function addToWishlist(product) {
+
+    if (!wishlist.includes(product)) {
+
+        wishlist.push(product);
+
+        localStorage.setItem(
+            "wishlist",
+            JSON.stringify(wishlist)
+        );
+
+        updateWishlistCount();
+
+        showToast("Added to wishlist ❤️");
+
+    } else {
+
+        showToast("Already in wishlist");
+    }
+}
+
+function updateWishlistCount() {
+
+    document.getElementById(
+        "wishlistCount"
+    ).textContent = wishlist.length;
+
+    document.getElementById(
+        "wishlistStat"
+    ).textContent = wishlist.length;
+}
+
+// ==========================
+// Search Products
+// ==========================
+
+const searchInput =
+document.getElementById("searchInput");
+
+if(searchInput){
+
+searchInput.addEventListener("keyup", () => {
+
+    const value =
+    searchInput.value.toLowerCase();
+
+    const products =
+    document.querySelectorAll(".product");
+
+    products.forEach(product => {
+
+        const name =
+        product.querySelector("h3")
+        .textContent
+        .toLowerCase();
+
+        if (name.includes(value)) {
+            product.style.display = "block";
+        } else {
+            product.style.display = "none";
+        }
+    });
+});
+}
+
+// ==========================
+// Category Filter
+// ==========================
+
+const categoryFilter =
+document.getElementById("categoryFilter");
+
+if(categoryFilter){
+
+categoryFilter.addEventListener(
+"change",
+function () {
+
+    const selected =
+    this.value;
+
+    const products =
+    document.querySelectorAll(".product");
+
+    products.forEach(product => {
+
+        const category =
+        product.dataset.category;
+
+        if (
+            selected === "all" ||
+            category === selected
+        ) {
+            product.style.display =
+            "block";
+        } else {
+            product.style.display =
+            "none";
+        }
+    });
+});
+}
+
+// ==========================
+// Dark Mode
+// ==========================
+
+const darkBtn =
+document.getElementById("darkModeBtn");
+
+if(darkBtn){
+
+darkBtn.addEventListener(
+"click",
+function () {
+
+    document.body.classList.toggle(
+        "dark"
+    );
+
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains(
+            "dark"
+        )
+    );
+});
+}
+
+function loadTheme() {
+
+    const theme =
+    localStorage.getItem("theme");
+
+    if (theme === "true") {
+        document.body.classList.add(
+            "dark"
+        );
+    }
+}
+
+// ==========================
+// Coupon System
+// ==========================
+
+function applyCoupon() {
+
+    const code =
+    document
+    .getElementById("couponCode")
+    .value
+    .trim()
+    .toUpperCase();
+
+    if (code === "ADITI20") {
+
+        let discount =
+        total * 0.20;
+
+        let finalAmount =
+        total - discount;
+
+        document.getElementById(
+            "cartTotal"
+        ).textContent =
+        finalAmount.toFixed(0);
+
+        showToast(
+        "20% Discount Applied 🎉"
+        );
+
+    }
+
+    else if(code === "SAVE10"){
+
+        let discount =
+        total * 0.10;
+
+        let finalAmount =
+        total - discount;
+
+        document.getElementById(
+            "cartTotal"
+        ).textContent =
+        finalAmount.toFixed(0);
+
+        showToast(
+        "10% Discount Applied 🎉"
+        );
+    }
+
+    else {
+
+        showToast(
+        "Invalid Coupon ❌"
+        );
+    }
+}
+
+// ==========================
+// Toast Notification
+// ==========================
+
+function showToast(message) {
+
+    const toast =
+    document.getElementById("toast");
+
+    toast.innerText = message;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 3000);
+}
+
+// ==========================
+// AI Shopping Assistant
+// ==========================
+
+function askBot() {
+
+    const input =
+    document.getElementById(
+        "userQuestion"
+    );
+
+    const message =
+    input.value.toLowerCase();
+
+    const chat =
+    document.getElementById(
+        "chatMessages"
+    );
+
+    let reply = "";
+
+    if (
+        message.includes("under 1000")
+    ) {
+
+        reply =
+        "Try Gaming Mouse, Power Bank or Bluetooth Speaker.";
+
+    }
+
+    else if (
+        message.includes("gaming")
+    ) {
+
+        reply =
+        "Mechanical Keyboard and Gaming Mouse are best choices.";
+
+    }
+
+    else if (
+        message.includes("electronics")
+    ) {
+
+        reply =
+        "Smart Watch and Wireless Headphones are popular.";
+
+    }
+
+    else if (
+        message.includes("hello")
+    ) {
+
+        reply =
+        "Hello 👋 How can I help you today?";
+    }
+
+    else {
+
+        reply =
+        "Please ask about products, prices or categories.";
+    }
+
+    chat.innerHTML += `
+        <p><b>You:</b> ${input.value}</p>
+        <p><b>Bot:</b> ${reply}</p>
+        <hr>
+    `;
+
+    chat.scrollTop =
+    chat.scrollHeight;
+
+    input.value = "";
+}
+
+// ==========================
+// Enter Key For Chatbot
+// ==========================
+
+function toggleChat(){
+
+    const chatbot =
+    document.getElementById("chatbot");
+
+    if(
+        chatbot.style.display === "block"
+    ){
+        chatbot.style.display = "none";
+    }
+    else{
+        chatbot.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>

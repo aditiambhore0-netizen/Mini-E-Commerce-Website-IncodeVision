@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Order History</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#f4f7fc;
+padding:30px;
+}
+
+h1{
+text-align:center;
+margin-bottom:30px;
+color:#2563eb;
+}
+
+.order{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+button{
+padding:10px 15px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin-top:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>My Orders</h1>
+
+<div id="ordersContainer"></div>
+
+<script>
+
+const orders =
+JSON.parse(
+localStorage.getItem("orders")
+) || [];
+
+const container =
+document.getElementById(
+"ordersContainer"
+);
+
+if(orders.length === 0){
+
+container.innerHTML =
+"<h2>No Orders Found</h2>";
+
+}
+
+orders.forEach((order,index)=>{
+
+let html = `
+
+<div class="order">
+
+<h3>
+Order #${index + 1}
+</h3>
+
+<p>
+<b>Name:</b>
+${order.customer}
+</p>
+
+<p>
+<b>Address:</b>
+${order.address}
+</p>
+
+<p>
+<b>Phone:</b>
+${order.phone}
+</p>
+
+<p>
+<b>Date:</b>
+${order.date}
+</p>
+
+<h4>
+Products:
+</h4>
+
+<ul>
+`;
+
+order.products.forEach(item=>{
+
+html += `
+<li>
+${item.name}
+- ₹${item.price}
+</li>
+`;
+
+});
+
+html += `
+
+</ul>
+
+<button onclick="downloadInvoice(${index})">
+Download Invoice
+</button>
+
+</div>
+`;
+
+container.innerHTML += html;
+
+});
+
+function downloadInvoice(index){
+
+const order = orders[index];
+
+let invoice = `
+========= INVOICE =========
+
+Customer:
+${order.customer}
+
+Phone:
+${order.phone}
+
+Address:
+${order.address}
+
+Date:
+${order.date}
+
+Products:
+
+`;
+
+order.products.forEach(item=>{
+
+invoice += `
+${item.name}
+- ₹${item.price}
+`;
+
+});
+
+invoice += `
+--------------------------
+Thank You For Shopping!
+`;
+
+const blob =
+new Blob(
+[invoice],
+{
+type:"text/plain"
+}
+);
+
+const link =
+document.createElement("a");
+
+link.href =
+URL.createObjectURL(blob);
+
+link.download =
+"invoice.txt";
+
+link.click();
+
+}
+
+</script>
+
+</body>
+</html>
